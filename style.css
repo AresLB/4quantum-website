@@ -172,6 +172,17 @@ section.block { padding: 120px 0; }
 footer { background: var(--dark); color: #8b919a; border-top: 1px solid rgba(255,255,255,.08); padding: 26px 0; font-size: 14px; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 footer a { text-decoration: none; }
+.flinks { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+
+/* Legal pages */
+.legal { max-width: 780px; margin: 0 auto; padding: 130px 24px 90px; }
+.legal h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin-bottom: 28px; }
+.legal h2 { font-size: 22px; font-weight: 600; margin: 40px 0 10px; line-height: 1.25; }
+.legal p, .legal li { color: #3a3f47; font-size: 16px; line-height: 1.7; }
+.legal ul { padding-left: 22px; }
+.legal a { color: var(--accent-ink); }
+.legal mark { background: #fff1a8; color: #3a3300; padding: 1px 4px; border-radius: 4px; }
+.draft { border: 1px solid #e3c34a; background: #fff8d6; border-radius: 12px; padding: 16px 18px; margin-bottom: 32px; color: #4a3d00; font-size: 15px; line-height: 1.55; }
 footer a:hover { color: #fff; }
 
 /* Responsive */

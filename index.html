@@ -13,7 +13,7 @@
   <script>
     (function () {
       var d = document.documentElement, skip = false;
-      try { var n = new Date(); skip = localStorage.getItem("q4-intro") === n.getFullYear() + "-" + (n.getMonth() + 1) + "-" + n.getDate(); } catch (e) {}
+      try { skip = sessionStorage.getItem("q4-intro") === "1"; } catch (e) {}
       if (skip || location.hash || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { d.className += " skip-intro"; return; }
       d.className += " intro-lock";
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -320,7 +320,7 @@
   <footer>
     <div class="wrap">
       <span>&copy; 2026 4Quantum</span>
-      <a href="mailto:info@4quantum.de">info@4quantum.de</a>
+      <span class="flinks"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="mailto:info@4quantum.de">info@4quantum.de</a></span>
     </div>
   </footer>
 

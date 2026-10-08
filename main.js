@@ -70,7 +70,7 @@
     function finish() {
       if (done) return;
       done = true;
-      try { var n = new Date(); localStorage.setItem('q4-intro', n.getFullYear() + '-' + (n.getMonth() + 1) + '-' + n.getDate()); } catch (e) {}
+      try { sessionStorage.setItem('q4-intro', '1'); } catch (e) {}
       root.classList.remove('intro-lock');
       glideTo(hero.getBoundingClientRect().top + window.scrollY, 1500);
     }
