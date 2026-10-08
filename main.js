@@ -256,11 +256,11 @@
   function initMap(canvas) {
     var ctx = canvas.getContext('2d');
     var dots = [], w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var visible = true, start = performance.now(), raf = 0;
+    var visible = true, start = performance.now(), raf = 0, last = 0;
     var packets = [];
     for (var k = 0; k < 9; k++) {
       var ei = Math.floor(Math.random() * E.length);
-      packets.push({ e: ei, dir: Math.random() < .5 ? 0 : 1, p: Math.random(), v: .18 + Math.random() * .22 });
+      packets.push({ e: ei, dir: Math.random() < .5 ? 0 : 1, p: Math.random(), v: .45 + Math.random() * .45 });
     }
 
     function resize() {
@@ -272,6 +272,8 @@
 
     function frame(now) {
       var t = (now - start) / 1000;
+      var dt = last ? Math.min(.05, (now - last) / 1000) : 1 / 60;
+      last = now;
       ctx.clearRect(0, 0, w, h);
 
       var rad = Math.max(1.1, w * 0.0027);
@@ -308,7 +310,7 @@
       if (!reduce && t > 1.4) {
         for (var q = 0; q < packets.length; q++) {
           var pk = packets[q];
-          pk.p += pk.v * (1 / 60);
+          pk.p += pk.v * dt;
           if (pk.p >= 1) {
             var endNode = E[pk.e][pk.dir === 0 ? 1 : 0];
             var opts = adj[endNode].filter(function (c) { return c !== pk.e; });
