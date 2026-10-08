@@ -3,38 +3,307 @@
 <head>
   <meta charset="utf-8">
   <title>4Quantum</title>
-  <meta name="description" content="4Quantum — a scalable, patented approach combining four-wave mixing in hot atomic vapour and quantum memories, all on one platform.">
+  <meta name="description" content="4Quantum builds single-photon sources and quantum memories on one fiber-integrated, patent-pending platform — the building blocks of the quantum internet.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e12">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="wrap">
-      <a class="logo" href="index.html">
-        <img src="assets/logo.png" alt="4Quantum">
-      </a>
+      <a class="logo" href="#top" aria-label="4Quantum"><img src="assets/logo.png" alt="4Quantum"></a>
       <nav>
-        <a href="team.html">Team</a>
+        <a href="#technology">Technology</a>
+        <a class="keep" href="#team">Team</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="pill" href="mailto:info@4quantum.de">Let's Connect</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
+    <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <h1>Building the quantum internet of tomorrow.</h1>
-        <p>A scalable, patented approach combining four-wave mixing in hot atomic vapour and quantum memories — all on one platform.</p>
-        <a class="btn" href="mailto:info@4quantum.de">Let's Connect</a>
+        <div>
+          <p class="label reveal" style="--d:.05s">Quantum networking hardware</p>
+          <h1 class="reveal" style="--d:.15s">Building the <span class="accent">quantum internet</span> of tomorrow.</h1>
+          <hr class="rule reveal" style="--d:.25s">
+          <p class="sub reveal" style="--d:.3s">A scalable, patented approach combining four-wave mixing in hot atomic vapour and quantum memories — all on one platform.</p>
+          <div class="actions reveal" style="--d:.45s">
+            <a class="btn primary" href="mailto:info@4quantum.de">Let's Connect</a>
+            <a class="btn ghost" href="#technology">See the technology</a>
+          </div>
+        </div>
+        <div class="map reveal" style="--d:.2s" aria-hidden="true"><canvas data-map="hero"></canvas></div>
+      </div>
+    </section>
+
+    <!-- Building blocks -->
+    <section class="block" id="blocks">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="label">Building blocks</p>
+          <h2>What a quantum internet needs</h2>
+        </div>
+        <div class="cards3">
+          <article class="card reveal" style="--d:.05s">
+            <span class="num">01</span>
+            <div class="art" aria-hidden="true">
+              <svg viewBox="0 0 300 190">
+                <line x1="100" y1="95" x2="285" y2="95" stroke="#d9d5cb" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+                <rect x="32" y="66" width="62" height="58" rx="12" fill="#ebe8e1" stroke="#cfcac0" stroke-width="2"/>
+                <rect x="90" y="86" width="9" height="18" rx="2" fill="#cfcac0"/>
+                <g fill="#ff5a36">
+                  <circle cy="95" r="7"><animate attributeName="cx" values="104;280" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="2.4s" repeatCount="indefinite"/><animate attributeName="r" values="4;11" dur="2.4s" repeatCount="indefinite"/></circle>
+                  <circle cy="95" r="7"><animate attributeName="cx" values="104;280" dur="2.4s" begin=".8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="2.4s" begin=".8s" repeatCount="indefinite"/><animate attributeName="r" values="4;11" dur="2.4s" begin=".8s" repeatCount="indefinite"/></circle>
+                  <circle cy="95" r="7"><animate attributeName="cx" values="104;280" dur="2.4s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="2.4s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="r" values="4;11" dur="2.4s" begin="1.6s" repeatCount="indefinite"/></circle>
+                </g>
+              </svg>
+            </div>
+            <h3>Source</h3>
+            <p>Emits single photons</p>
+          </article>
+
+          <article class="card reveal" style="--d:.15s">
+            <span class="num">02</span>
+            <div class="art" aria-hidden="true">
+              <svg viewBox="0 0 300 190">
+                <line x1="20" y1="100" x2="92" y2="100" stroke="#d9d5cb" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+                <line x1="208" y1="100" x2="280" y2="100" stroke="#d9d5cb" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+                <rect x="140" y="58" width="20" height="14" rx="2" fill="#f2f3f5" stroke="#9aa3b0" stroke-width="2"/>
+                <rect x="98" y="68" width="104" height="64" fill="#f4f5f7" stroke="#9aa3b0" stroke-width="2"/>
+                <ellipse cx="98" cy="100" rx="9" ry="32" fill="#eef0f3" stroke="#9aa3b0" stroke-width="2"/>
+                <ellipse cx="202" cy="100" rx="9" ry="32" fill="#eef0f3" stroke="#9aa3b0" stroke-width="2"/>
+                <g fill="#9aa3b0">
+                  <circle cx="118" cy="84" r="2.4"><animate attributeName="cy" values="84;92;84" dur="3s" repeatCount="indefinite"/></circle>
+                  <circle cx="132" cy="116" r="2.4"><animate attributeName="cx" values="132;140;132" dur="2.6s" repeatCount="indefinite"/></circle>
+                  <circle cx="150" cy="80" r="2.4"><animate attributeName="cx" values="150;158;150" dur="3.4s" repeatCount="indefinite"/></circle>
+                  <circle cx="170" cy="118" r="2.4"><animate attributeName="cy" values="118;110;118" dur="2.8s" repeatCount="indefinite"/></circle>
+                  <circle cx="184" cy="88" r="2.4"><animate attributeName="cy" values="88;96;88" dur="3.2s" repeatCount="indefinite"/></circle>
+                  <circle cx="124" cy="104" r="2.4"><animate attributeName="cx" values="124;118;124" dur="3.6s" repeatCount="indefinite"/></circle>
+                  <circle cx="176" cy="104" r="2.4"><animate attributeName="cx" values="176;184;176" dur="2.9s" repeatCount="indefinite"/></circle>
+                  <circle cx="156" cy="124" r="2.4"><animate attributeName="cy" values="124;118;124" dur="3.1s" repeatCount="indefinite"/></circle>
+                </g>
+                <circle cx="150" cy="100" r="9" fill="#ff5a36" opacity=".25"><animate attributeName="r" values="9;24;9" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;0;.4" dur="2.4s" repeatCount="indefinite"/></circle>
+                <circle cx="150" cy="100" r="7" fill="#ff5a36"/>
+              </svg>
+            </div>
+            <h3>Memory</h3>
+            <p>Stores quantum states in atoms and releases them when needed</p>
+          </article>
+
+          <article class="card reveal" style="--d:.25s">
+            <span class="num">03</span>
+            <div class="art" aria-hidden="true">
+              <svg viewBox="0 0 300 190">
+                <defs><radialGradient id="glow"><stop offset="0" stop-color="#ff5a36" stop-opacity=".55"/><stop offset="1" stop-color="#ff5a36" stop-opacity="0"/></radialGradient></defs>
+                <path id="fiberPath" d="M70,165 C30,125 85,98 140,106 C205,116 235,92 258,48" fill="none" stroke="#2b3445" stroke-width="15" stroke-linecap="round"/>
+                <path d="M70,165 C30,125 85,98 140,106 C205,116 235,92 258,48" fill="none" stroke="#4a566d" stroke-width="3" stroke-linecap="round" transform="translate(-2,-3)"/>
+                <circle cx="258" cy="48" r="26" fill="url(#glow)"><animate attributeName="opacity" values=".4;1;.4" dur="2.4s" repeatCount="indefinite"/></circle>
+                <circle r="6" fill="#ff5a36"><animateMotion dur="2.6s" repeatCount="indefinite" path="M70,165 C30,125 85,98 140,106 C205,116 235,92 258,48"/></circle>
+                <circle r="13" fill="url(#glow)"><animateMotion dur="2.6s" repeatCount="indefinite" path="M70,165 C30,125 85,98 140,106 C205,116 235,92 258,48"/></circle>
+              </svg>
+            </div>
+            <h3>Fiber</h3>
+            <p>Carries photons between network nodes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="statement" id="statement">
+      <div class="wrap">
+        <img src="assets/logo.png" alt="4Quantum">
+        <p id="stmt">We are building single-photon sources and memories, all on one <span class="hl">fiber-integrated patented platform</span>.</p>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="block" id="technology">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="label">Technology</p>
+          <h2>Source + Memory</h2>
+        </div>
+        <div class="diagram reveal" style="--d:.1s">
+          <svg viewBox="0 0 1000 430" role="img" aria-label="Pump laser drives a light cage four-wave-mixing photon source; a detector click triggers the memory control of a second light cage memory that releases photons on demand.">
+            <defs>
+              <pattern id="rings" width="11" height="40" patternUnits="userSpaceOnUse"><line x1="5.5" y1="2" x2="5.5" y2="38" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/></pattern>
+              <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ff4a22"/><stop offset="1" stop-color="#ff8a66"/></linearGradient>
+              <radialGradient id="pg"><stop offset="0" stop-color="#ffd2c4"/><stop offset=".35" stop-color="#ff5a36"/><stop offset="1" stop-color="#ff5a36" stop-opacity="0"/></radialGradient>
+              <filter id="blur"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+
+            <rect x="300" y="36" width="370" height="362" rx="26" fill="#1c2842" stroke="#2c3b5c" stroke-width="1.5"/>
+            <text x="330" y="372" fill="#8fa0c0" font-size="14" letter-spacing="3">3D-PRINTED CHIP</text>
+
+            <text x="330" y="86" fill="#fff" font-size="18" font-weight="600">Light cage + FWM (source)</text>
+            <rect x="330" y="104" width="310" height="40" rx="20" fill="#ff4a22" opacity=".35" filter="url(#blur)"/>
+            <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#beam)" opacity=".9"/>
+            <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#rings)"/>
+
+            <text x="330" y="256" fill="#fff" font-size="18" font-weight="600">Light cage + EIT (memory)</text>
+            <rect x="330" y="268" width="310" height="40" rx="20" fill="#9fb4d6" opacity=".25" filter="url(#blur)"/>
+            <rect x="330" y="268" width="310" height="40" rx="20" fill="#7d93bb" opacity=".55"/>
+            <rect x="330" y="268" width="310" height="40" rx="20" fill="url(#rings)"/>
+
+            <rect x="70" y="102" width="140" height="44" rx="9" fill="#2a3040" stroke="#3a4156"/>
+            <text x="140" y="130" fill="#fff" font-size="18" font-weight="600" text-anchor="middle">Pump laser</text>
+            <line x1="210" y1="124" x2="330" y2="124" stroke="#ff4a22" stroke-width="7"/>
+            <line x1="210" y1="124" x2="330" y2="124" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-dasharray="6 18"><animate attributeName="stroke-dashoffset" from="48" to="0" dur="1s" repeatCount="indefinite"/></line>
+            <line x1="330" y1="124" x2="640" y2="124" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 18"><animate attributeName="stroke-dashoffset" from="48" to="0" dur="1.4s" repeatCount="indefinite"/></line>
+
+            <path d="M640,124 L770,124" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+            <path d="M770,98 h18 a26,26 0 0 1 0,52 h-18 z" fill="#e0451f"/>
+            <text x="796" y="180" fill="#c9d2e6" font-size="18" text-anchor="middle">Detector</text>
+            <line x1="826" y1="124" x2="850" y2="124" stroke="#8fa0c0" stroke-width="2" stroke-dasharray="5 5"/>
+            <rect x="855" y="100" width="100" height="46" rx="9" fill="#e8421a"/>
+            <text x="905" y="130" fill="#fff" font-size="19" font-weight="700" text-anchor="middle">Click</text>
+            <line x1="905" y1="146" x2="905" y2="248" stroke="#ff4a22" stroke-width="3"/>
+            <rect x="823" y="250" width="164" height="46" rx="9" fill="#232a38" stroke="#3a4156"/>
+            <text x="905" y="279" fill="#fff" font-size="17" font-weight="600" text-anchor="middle">Memory control</text>
+
+            <circle cx="706" cy="202" r="26" fill="none" stroke="#c9d2e6" stroke-width="2.5"/>
+            <circle cx="706" cy="202" r="19" fill="none" stroke="#c9d2e6" stroke-width="2"/>
+            <text x="746" y="208" fill="#c9d2e6" font-size="18">Delay fiber</text>
+            <path d="M690,124 L706,176" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+            <path d="M640,284 L690,222" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+
+            <path d="M905,296 V392 H480 V308" stroke="#ff4a22" stroke-width="3" fill="none"/>
+            <path d="M330,288 H90" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
+            <path d="M104,280 L90,288 L104,296" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
+            <text x="70" y="330" fill="#ff7b5a" font-size="19" font-weight="600">Quasi On-demand photons</text>
+
+            <g>
+              <circle r="14" fill="url(#pg)"><animateMotion dur="3.6s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
+              <circle r="5" fill="#fff"><animateMotion dur="3.6s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
+            </g>
+            <g>
+              <circle r="14" fill="url(#pg)"><animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
+              <circle r="5" fill="#fff"><animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
+            </g>
+            <circle r="9" fill="url(#pg)"><animateMotion dur="3.6s" begin=".8s" repeatCount="indefinite" path="M905,146 V248"/></circle>
+            <circle r="9" fill="url(#pg)"><animateMotion dur="3.6s" begin="2.4s" repeatCount="indefinite" path="M905,296 V392 H480 V308"/></circle>
+            <circle r="12" fill="url(#pg)"><animateMotion dur="3.6s" begin="2.9s" repeatCount="indefinite" path="M480,288 H90"/></circle>
+          </svg>
+        </div>
+        <div class="points3">
+          <div class="point reveal" style="--d:.05s"><span class="arrow">→</span><strong>Up to 5x less power</strong><span class="desc">Stronger atom-photon interaction</span></div>
+          <div class="point reveal" style="--d:.15s"><span class="arrow">→</span><strong>Proven physics, made compact</strong><span class="desc">Same processes as market sources</span></div>
+          <div class="point reveal" style="--d:.25s"><span class="arrow">→</span><strong>All in fiber, telecom native</strong><span class="desc">No mirrors to misalign, no days lost</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patent -->
+    <section class="block" id="patent" style="padding-top:20px">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="label">Technology · Patent</p>
+          <h2>Patented light cages</h2>
+        </div>
+        <div class="split">
+          <div class="shot reveal"><img src="assets/lightcage.jpg" alt="Rendering of a 3D-printed light cage: spaced rods surrounding a glowing core while atomic gas flows through." width="666" height="375"></div>
+          <div class="list">
+            <div class="item reveal" style="--d:.1s"><span class="n">01</span><div><strong>Patent pending</strong><span>Photon sources, memories, sensors and more</span></div></div>
+            <div class="item reveal" style="--d:.2s"><span class="n">02</span><div><strong>3D-printed light cages</strong><span>Spaced rods let the atomic gas flow through</span></div></div>
+            <div class="item reveal" style="--d:.3s"><span class="n">03</span><div><strong>All in fiber, plug and play</strong><span>No alignment needed, demonstrated in the lab</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="block team" id="team">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="label">Team</p>
+          <h2>Meet the team</h2>
+        </div>
+        <div class="team-grid">
+          <article class="person reveal" style="--d:.0s">
+            <div class="ph"><img src="assets/team/jasper.jpg" alt="Jasper Glindemann" loading="lazy"></div>
+            <h3>Jasper Glindemann</h3>
+            <span class="chip">Technology &amp; Business Development</span>
+            <p class="aff">Researcher at Humboldt-Universität zu Berlin</p>
+            <a class="in-link" href="https://www.linkedin.com/in/jasperglindemann/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </article>
+          <article class="person reveal" style="--d:.08s">
+            <div class="ph"><img src="assets/team/esteban.jpg" alt="Esteban Gómez López" loading="lazy"></div>
+            <h3>Esteban Gómez López</h3>
+            <span class="chip">Research Lead</span>
+            <p class="aff">Researcher at Humboldt-Universität zu Berlin</p>
+            <a class="in-link" href="https://www.linkedin.com/in/gomezlopez-esteban/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </article>
+          <article class="person reveal" style="--d:.16s">
+            <div class="ph"><img src="assets/team/lennard.jpg" alt="Lennard Baur" loading="lazy"></div>
+            <h3>Lennard Baur</h3>
+            <span class="chip">Fundraising &amp; Operations</span>
+            <p class="aff">Analyst at High-Tech Gründerfonds</p>
+            <a class="in-link" href="https://www.linkedin.com/in/lennard-baur/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </article>
+          <article class="person reveal" style="--d:.24s">
+            <div class="ph"><img src="assets/team/siavash.jpg" alt="Siavash Qodratipour" loading="lazy"></div>
+            <h3>Siavash Qodratipour</h3>
+            <span class="chip">Product Application &amp; Process Development Lead</span>
+            <p class="aff">Researcher at Humboldt-Universität zu Berlin</p>
+            <a class="in-link" href="https://www.linkedin.com/in/siavash-qodratipour-4bb9501b3/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </article>
+          <article class="person reveal" style="--d:.32s">
+            <div class="ph"><img src="assets/team/benson.jpg" alt="Prof. Dr. Oliver Benson" loading="lazy"></div>
+            <h3>Prof. Dr. Oliver Benson</h3>
+            <span class="chip adv">Scientific Advisor</span>
+            <p class="aff">Leader of the Nanooptics group at Humboldt-Universität zu Berlin</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="block" id="roadmap">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="label">Roadmap · Next 18 months</p>
+          <h2>From validation to first customer</h2>
+        </div>
+        <div class="road reveal">
+          <div class="steps">
+            <div class="step now"><div class="when">Now → Mar 2027</div><span class="dot"></span><div class="box"><span class="n">01</span><h3>Validate &amp; apply</h3><span class="tag">Market &amp; IP</span></div></div>
+            <div class="step"><div class="when">2027</div><span class="dot"></span><div class="box"><span class="n">02</span><h3>Prototype</h3><span class="tag">Technology</span></div></div>
+            <div class="step"><div class="when">Funding start</div><span class="dot"></span><div class="box"><span class="n">03</span><h3>Team &amp; pipeline</h3><span class="tag">Funding</span></div></div>
+            <div class="step"><div class="when">2028</div><span class="dot"></span><div class="box"><span class="n">04</span><h3>Field test</h3><span class="tag">Field &amp; market</span></div></div>
+            <div class="step"><div class="when">2028/29</div><span class="dot"></span><div class="box"><span class="n">05</span><h3>First industry customer</h3><span class="tag">Hire &amp; scale</span></div></div>
+          </div>
+          <div class="track"><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <div>
+          <p class="label reveal" style="color:var(--accent)">Get in touch</p>
+          <h2 class="reveal" style="--d:.1s">Let's build the <span class="accent">quantum internet</span> together.</h2>
+          <blockquote class="reveal" style="--d:.2s">“The most important part of any network is still the person on the other end of the line.”</blockquote>
+          <a class="btn primary reveal" style="--d:.3s" href="mailto:info@4quantum.de">Let's Connect</a>
+          <p class="mail reveal" style="--d:.35s"><a href="mailto:info@4quantum.de">info@4quantum.de</a></p>
+        </div>
+        <div class="map" aria-hidden="true"><canvas data-map="cta"></canvas></div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>&copy; 2026 4Quantum</p>
+      <span>&copy; 2026 4Quantum</span>
       <a href="mailto:info@4quantum.de">info@4quantum.de</a>
     </div>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
