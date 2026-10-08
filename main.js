@@ -47,6 +47,181 @@
     document.querySelectorAll('svg').forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
   }
 
+  /* Intro: animated lockup, then scroll to hero */
+  (function () {
+    var root = document.documentElement;
+    var intro = document.getElementById('intro');
+    var hero = document.getElementById('hero');
+    if (!intro || !hero || root.classList.contains('skip-intro')) return;
+    window.scrollTo(0, 0);
+    root.classList.add('intro-active');
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      try { sessionStorage.setItem('q4-intro', '1'); } catch (e) {}
+      root.classList.remove('intro-lock');
+      hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    var last = intro.querySelector('.l7');
+    if (last) last.addEventListener('animationend', function () { setTimeout(finish, 1100); });
+    setTimeout(finish, 8000);
+    window.addEventListener('wheel', function (e) { if (e.deltaY > 0) finish(); }, { passive: true });
+    window.addEventListener('touchmove', finish, { passive: true });
+    window.addEventListener('keydown', function (e) { if (/^( |ArrowDown|PageDown|Enter)$/.test(e.key)) finish(); });
+    var hint = intro.querySelector('.scrollhint');
+    if (hint) hint.addEventListener('click', function (e) { e.preventDefault(); finish(); });
+    window.addEventListener('scroll', function () {
+      root.classList.toggle('intro-active', window.scrollY < intro.offsetHeight * 0.5);
+    }, { passive: true });
+  })();
+
+  /* Product diagram: pump in -> photon pair -> click -> store -> read out */
+  (function () {
+    var box = document.getElementById('diagram');
+    if (!box) return;
+    var svg = box.querySelector('svg'), scroller = box.querySelector('.scroller'), phase = document.getElementById('phase');
+    var $ = function (id) { return svg.querySelector('#' + id); };
+    var el = {
+      beam: $('beam'), burst: $('burst'), c1: $('c1glow'), c2: $('c2glow'), det: $('detFlash'), click: $('clickFlash'),
+      mc: $('mcFlash'), clickGlow: $('clickGlow'), ctrl: $('ctrlGlow'), ring: $('ring'), a: $('phA'), b: $('phB'), out: $('outLbl')
+    };
+    var beamLines = el.beam.querySelectorAll('line');
+
+    function mk(pts) {
+      var L = [0];
+      for (var i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      return { p: pts, L: L, len: L[L.length - 1] };
+    }
+    function at(path, s) {
+      s = Math.max(0, Math.min(path.len, s));
+      for (var i = 1; i < path.L.length; i++) {
+        if (s <= path.L[i]) {
+          var f = (s - path.L[i - 1]) / (path.L[i] - path.L[i - 1] || 1);
+          return [path.p[i - 1][0] + (path.p[i][0] - path.p[i - 1][0]) * f, path.p[i - 1][1] + (path.p[i][1] - path.p[i - 1][1]) * f];
+        }
+      }
+      return path.p[path.p.length - 1];
+    }
+    var loop = [[640, 124], [660, 124], [706, 176]];
+    for (var d = 0; d <= 501.3; d += 3) {
+      var th = (-90 - d) * Math.PI / 180;
+      loop.push([706 + 26 * Math.cos(th), 202 + 26 * Math.sin(th)]);
+    }
+    loop.push([640, 288], [485, 288]);
+    var pathA = mk([[640, 124], [770, 124]]);
+    var pathB = mk(loop);
+    var pathOut = mk([[485, 288], [330, 288], [90, 288]]);
+
+    var vB = 140, tPair = 1.6, tClick = tPair + 1.0;
+    var tE = tPair + (pathB.len - 60) / vB, tS = tE + 0.9;
+    var tW0 = tClick + 0.7, tW1 = tE + 0.1;
+    var tRs = tS + 0.6, tRa = tRs + 1.9, T = tRa + 2.0 + 0.9;
+
+    function clamp(x) { return Math.max(0, Math.min(1, x)); }
+    function ramp(t, a, b) { return clamp((t - a) / (b - a)); }
+    function bump(t, a) { return ramp(t, a, a + 0.1) * (1 - ramp(t, a + 0.15, a + 0.7)) * 0.85; }
+    function place(g, p, o, sc) { g.setAttribute('transform', 'translate(' + p[0].toFixed(1) + ' ' + p[1].toFixed(1) + ') scale(' + (sc || 1).toFixed(3) + ')'); g.setAttribute('opacity', o.toFixed(2)); }
+    function dash(node, u) { node.setAttribute('stroke-dashoffset', (-(-0.25 + 1.25 * u)).toFixed(4)); }
+
+    var captions = [
+      [0, 'The pump beam enters the light cage'],
+      [tPair, 'A photon pair is generated'],
+      [tClick, 'One photon triggers the detector click, the other runs through the delay fiber'],
+      [tE - 0.1, 'The memory control holds the photon inside the memory'],
+      [tRs, 'Read out on demand']
+    ];
+    var capIdx = -1;
+    function setCaption(t) {
+      var i = 0;
+      for (var k = 0; k < captions.length; k++) if (t >= captions[k][0]) i = k;
+      if (i === capIdx) return;
+      capIdx = i;
+      phase.classList.add('swap');
+      setTimeout(function () {
+        phase.querySelector('.step').textContent = i + 1;
+        phase.querySelector('.txt').textContent = captions[i][1];
+        phase.classList.remove('swap');
+      }, 180);
+    }
+
+    function frame(t) {
+      var u = ramp(t, 0, 1.5);
+      beamLines.forEach(function (l) { l.setAttribute('stroke-dashoffset', (-(-0.2 + 1.2 * u)).toFixed(4)); });
+      el.beam.setAttribute('opacity', t < tPair ? 1 : 0);
+      el.c1.setAttribute('opacity', Math.max(0, 0.75 * (ramp(t, 0.7, 1.5) - ramp(t, 2.3, 3.4))).toFixed(2));
+
+      var bu = ramp(t, tPair - 0.05, tPair + 0.7);
+      el.burst.setAttribute('r', (6 + 30 * bu).toFixed(1));
+      el.burst.setAttribute('opacity', (t >= tPair - 0.05 && bu < 1) ? ((1 - bu) * 0.9).toFixed(2) : 0);
+
+      var pa = null;
+      if (t >= tPair && t < tClick) { pa = at(pathA, pathA.len * (t - tPair) / (tClick - tPair)); place(el.a, pa, Math.min(1, ramp(t, tPair, tPair + 0.15) * 1.2)); }
+      else el.a.setAttribute('opacity', 0);
+      el.det.setAttribute('opacity', bump(t, tClick).toFixed(2));
+      el.click.setAttribute('opacity', bump(t, tClick + 0.05).toFixed(2));
+
+      var cu = ramp(t, tClick + 0.05, tClick + 0.7);
+      el.clickGlow.setAttribute('opacity', (cu > 0 && cu < 1) ? 1 : 0);
+      dash(el.clickGlow, cu);
+      el.mc.setAttribute('opacity', Math.min(0.9, bump(t, tW0) + bump(t, tRs)).toFixed(2));
+
+      var wu = ramp(t, tW0, tW1), ru = ramp(t, tRs, tRa), cuu = 0, show = 0;
+      if (t >= tW0 && t < tW1) { cuu = wu; show = 1; } else if (t >= tRs && t < tRa) { cuu = ru; show = 1; }
+      el.ctrl.setAttribute('opacity', show);
+      dash(el.ctrl, cuu);
+
+      el.c2.setAttribute('opacity', Math.max(0, 0.7 * (ramp(t, tE, tS) - ramp(t, tRa, tRa + 0.8))).toFixed(2));
+      var r1 = ramp(t, tW1, tW1 + 0.8), r2 = ramp(t, tRa, tRa + 0.8), rr = (r1 > 0 && r1 < 1) ? r1 : ((r2 > 0 && r2 < 1) ? r2 : 0);
+      el.ring.setAttribute('r', (8 + 34 * rr).toFixed(1));
+      el.ring.setAttribute('opacity', rr > 0 ? ((1 - rr) * 0.9).toFixed(2) : 0);
+
+      var pb = null;
+      if (t >= tPair && t < tRa) {
+        var s;
+        if (t < tE) s = vB * (t - tPair);
+        else if (t < tS) { var q = (t - tE) / 0.9; s = pathB.len - 60 + 60 * (1 - (1 - q) * (1 - q)); }
+        else s = pathB.len;
+        pb = at(pathB, s);
+        var pulse = (t >= tS) ? 1 + 0.18 * Math.sin((t - tS) * 5.5) : 1;
+        place(el.b, pb, Math.min(1, ramp(t, tPair, tPair + 0.15) * 1.2), pulse);
+      } else if (t >= tRa && t < tRa + 2.0) {
+        var ou = (t - tRa) / 2.0, sm = ou * ou * (3 - 2 * ou);
+        pb = at(pathOut, pathOut.len * sm);
+        place(el.b, pb, ou > 0.88 ? Math.max(0, (1 - ou) / 0.12) : 1);
+      } else el.b.setAttribute('opacity', 0);
+
+      el.out.setAttribute('opacity', (0.6 + 0.4 * ramp(t, tRa + 1.4, tRa + 1.9) * (1 - ramp(t, tRa + 2.2, tRa + 2.9))).toFixed(2));
+      setCaption(t);
+
+      if (follow) {
+        var fx = t < tPair ? 210 + 430 * u : (t < tClick ? (pa ? pa[0] : 640) : (t < tW0 + 0.6 ? 860 : (pb ? pb[0] : 485)));
+        var k = svg.getBoundingClientRect().width / 1000;
+        var target = fx * k - scroller.clientWidth / 2;
+        scroller.scrollLeft += (target - scroller.scrollLeft) * 0.07;
+      }
+    }
+
+    var follow = false, lastTouch = 0;
+    function updateFollow() { follow = window.innerWidth <= 860 && scroller.scrollWidth > scroller.clientWidth + 4 && (performance.now() - lastTouch > 5000); }
+    scroller.addEventListener('touchstart', function () { lastTouch = performance.now(); follow = false; }, { passive: true });
+    scroller.addEventListener('pointerdown', function () { lastTouch = performance.now(); follow = false; });
+    window.addEventListener('resize', updateFollow);
+
+    var fixed = /[?&]diagT=([0-9.]+)/.exec(location.search);
+    if (fixed) { frame(parseFloat(fixed[1])); return; }
+    if (reduce) { frame(tS + 0.8); return; }
+    var visible = false, vt = 0, prev = 0;
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; prev = performance.now(); }, { threshold: 0.1 }).observe(box);
+    (function tick(now) {
+      requestAnimationFrame(tick);
+      if (!visible) return;
+      vt += Math.min(0.1, (now - prev) / 1000); prev = now;
+      updateFollow();
+      frame(vt % T);
+    })(performance.now());
+  })();
+
   /* Europe network map */
   var N = [[46,222],[105,248],[155,237],[130,290],[191,270],[237,234],[230,185],[211,123],[282,130],[349,118],[311,239],[248,271],[265,298],[219,299],[190,312],[196,342],[292,309],[360,357],[338,455],[229,395],[127,400],[70,417],[18,443]]
     .map(function (p) { return [p[0] / 444, p[1] / 500]; });

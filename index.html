@@ -6,13 +6,25 @@
   <meta name="description" content="4Quantum builds single-photon sources and quantum memories on one fiber-integrated, patent-pending platform — the building blocks of the quantum internet.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0e12">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, skip = false;
+      try { skip = sessionStorage.getItem("q4-intro") === "1"; } catch (e) {}
+      if (skip || location.hash || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { d.className += " skip-intro"; return; }
+      d.className += " intro-lock";
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      setTimeout(function () { d.className = d.className.replace(" intro-lock", ""); }, 12000);
+    })();
+  </script>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <a class="logo" href="#top" aria-label="4Quantum"><img src="assets/logo.png" alt="4Quantum"></a>
+      <a class="logo" href="#hero" aria-label="4Quantum"><img src="assets/brand/lockup-color.svg" alt="4Quantum" width="923" height="167.5"></a>
       <nav>
         <a href="#technology">Technology</a>
         <a class="keep" href="#team">Team</a>
@@ -22,8 +34,43 @@
   </header>
 
   <main id="top">
+    <!-- Intro: animated brand lockup (plays once, then scrolls to the hero) -->
+    <section class="intro" id="intro">
+      <svg class="q4O" viewBox="-20 -105 963 377.5" width="963" height="377.5" overflow="visible" role="img" aria-label="4Quantum" xmlns="http://www.w3.org/2000/svg">
+<style>
+.q4O .f{transform-box:fill-box;transform-origin:center}
+.q4O .v{transform-box:view-box;transform-origin:0 0}
+@keyframes q4O-d2{0.00%{stroke-dashoffset:1}0.00%{stroke-dashoffset:1}9.78%{stroke-dashoffset:0}100.00%{stroke-dashoffset:0}}@keyframes q4O-d3{0.00%{stroke-dashoffset:1}2.61%{stroke-dashoffset:1}12.39%{stroke-dashoffset:0}100.00%{stroke-dashoffset:0}}@keyframes q4O-d0{0.00%{stroke-dashoffset:1}5.22%{stroke-dashoffset:1}15.00%{stroke-dashoffset:0}100.00%{stroke-dashoffset:0}}@keyframes q4O-d1{0.00%{stroke-dashoffset:1}7.83%{stroke-dashoffset:1}17.61%{stroke-dashoffset:0}100.00%{stroke-dashoffset:0}}@keyframes q4O-ring{0.00%{transform:rotate(-120deg) scale(1)}28.26%{transform:rotate(0deg) scale(1)}43.48%{transform:rotate(0deg) scale(1)}45.65%{transform:rotate(0deg) scale(.94)}51.09%{transform:rotate(0deg) scale(1)}100.00%{transform:rotate(0deg) scale(1)}}@keyframes q4O-tail{0.00%{stroke-dashoffset:1}43.48%{stroke-dashoffset:1}46.52%{stroke-dashoffset:0}100.00%{stroke-dashoffset:0}}@keyframes q4O-dot{0.00%{transform:translate(-86px,-86px) scale(0)}19.57%{transform:translate(-86px,-86px) scale(0)}25.00%{transform:translate(-86px,-86px) scale(1.5)}30.43%{transform:translate(-86px,-86px) scale(1)}35.87%{transform:translate(-86px,-86px) scale(1.15)}41.30%{transform:translate(-86px,-86px) scale(.75)}43.48%{transform:translate(-86px,-86px) scale(.75)}48.26%{transform:translate(6px,6px) scale(1.05)}51.74%{transform:translate(0,0) scale(1)}100.00%{transform:translate(0,0) scale(1)}}@keyframes q4O-streak{0.00%{stroke-dashoffset:.35;opacity:0}43.26%{stroke-dashoffset:.35;opacity:0}43.48%{stroke-dashoffset:.35;opacity:1}48.70%{stroke-dashoffset:-.8;opacity:0}100.00%{stroke-dashoffset:-.8;opacity:0}}@keyframes q4O-pulse{0.00%{transform:scale(1);opacity:0}48.04%{transform:scale(1);opacity:0}48.26%{transform:scale(1);opacity:.7}60.87%{transform:scale(3.2);opacity:0}100.00%{transform:scale(3.2);opacity:0}}@keyframes q4O-move{0.00%{transform:translate(340.1px,-37.7px) scale(1.45)}59.78%{transform:translate(340.1px,-37.7px) scale(1.45)}76.09%{transform:translate(0px,0px) scale(1)}100.00%{transform:translate(0px,0px) scale(1)}}@keyframes q4O-l0{0.00%{opacity:0;transform:translateY(46px)}66.30%{opacity:0;transform:translateY(46px)}78.26%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l1{0.00%{opacity:0;transform:translateY(46px)}67.83%{opacity:0;transform:translateY(46px)}79.78%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l2{0.00%{opacity:0;transform:translateY(46px)}69.35%{opacity:0;transform:translateY(46px)}81.30%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l3{0.00%{opacity:0;transform:translateY(46px)}70.87%{opacity:0;transform:translateY(46px)}82.83%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l4{0.00%{opacity:0;transform:translateY(46px)}72.39%{opacity:0;transform:translateY(46px)}84.35%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l5{0.00%{opacity:0;transform:translateY(46px)}73.91%{opacity:0;transform:translateY(46px)}85.87%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l6{0.00%{opacity:0;transform:translateY(46px)}75.43%{opacity:0;transform:translateY(46px)}87.39%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}@keyframes q4O-l7{0.00%{opacity:0;transform:translateY(46px)}76.96%{opacity:0;transform:translateY(46px)}88.91%{opacity:1;transform:translateY(0)}100.00%{opacity:1;transform:translateY(0)}}
+
+.q4O .move{animation:q4O-move 4.6s cubic-bezier(.7,0,.2,1) 1 both}
+.q4O .ring{animation:q4O-ring 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .d0{stroke-dasharray:1 1;animation:q4O-d0 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .d1{stroke-dasharray:1 1;animation:q4O-d1 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .d2{stroke-dasharray:1 1;animation:q4O-d2 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .d3{stroke-dasharray:1 1;animation:q4O-d3 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .tail{stroke-dasharray:1 1;animation:q4O-tail 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .dot{animation:q4O-dot 4.6s cubic-bezier(.2,.7,.2,1) 1 both}
+.q4O .streak{stroke-dasharray:.35 2;opacity:0;animation:q4O-streak 4.6s cubic-bezier(.4,0,.2,1) 1 both}
+.q4O .pulse{opacity:0;animation:q4O-pulse 4.6s cubic-bezier(.1,.6,.3,1) 1 both}
+.q4O .l0{animation:q4O-l0 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l1{animation:q4O-l1 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l2{animation:q4O-l2 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l3{animation:q4O-l3 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l4{animation:q4O-l4 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l5{animation:q4O-l5 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l6{animation:q4O-l6 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+.q4O .l7{animation:q4O-l7 4.6s cubic-bezier(.2,.8,.2,1) 1 both}
+@media (prefers-reduced-motion:reduce){.q4O *{animation:none!important}}
+</style>
+<defs><clipPath id="q4O-c"><rect x="201.5" y="-20" width="923" height="187.5"/></clipPath></defs>
+<g class="root"><g class="move v"><g transform="translate(-21 -21)"><g class="ring f" fill="none" stroke="currentColor" stroke-width="22"><path class="d0" pathLength="1" d="M155.40 102.63A62 62 0 0 1 102.63 155.40"/><path class="d1" pathLength="1" d="M85.37 155.40A62 62 0 0 1 32.60 102.63"/><path class="d2" pathLength="1" d="M32.60 85.37A62 62 0 0 1 85.37 32.60"/><path class="d3" pathLength="1" d="M102.63 32.60A62 62 0 0 1 155.40 85.37"/></g><path class="tail" pathLength="1" d="M133 133L165 165" fill="none" stroke="currentColor" stroke-width="22"/><path class="streak" pathLength="1" d="M94 94L180 180" fill="none" stroke="#FF5533" stroke-width="7" stroke-linecap="round"/><circle class="pulse f" cx="180" cy="180" r="8.5" fill="none" stroke="#FF5533" stroke-width="2.5"/><circle class="dot f" cx="180" cy="180" r="8.5" fill="#FF5533"/></g></g>
+<g clip-path="url(#q4O-c)" fill="currentColor"><path class="l0" d="M285.20 124.80L266.26 124.80L266.26 103.78L215.35 103.78L215.35 81.88L251.16 21.20L285.20 21.20L285.20 86.91L302.37 86.91L302.37 103.78L285.20 103.78L285.20 124.80ZM233.40 84.54L233.40 86.91L266.26 86.91L266.26 33.34L263.60 33.34L233.40 84.54Z"/><path class="l1" d="M372.82 151.44L357.28 151.44Q350.03 151.44 345.51 146.93Q341 142.41 341 134.86L341 134.86L341 126.13Q325.61 123.76 316.73 113.33Q307.85 102.90 307.85 85.43L307.85 85.43L307.85 60.57Q307.85 40.59 319.39 29.86Q330.94 19.13 350.47 19.13L350.47 19.13Q370.01 19.13 381.55 29.86Q393.10 40.59 393.10 60.57L393.10 60.57L393.10 85.43Q393.10 102.90 384.22 113.33Q375.34 123.76 359.94 126.13L359.94 126.13L359.94 131.90Q359.94 136.34 364.09 136.34L364.09 136.34L372.82 136.34L372.82 151.44ZM350.47 109.41L350.47 109.41Q361.42 109.41 367.49 103.04Q373.56 96.68 373.56 86.02L373.56 86.02L373.56 59.98Q373.56 49.32 367.49 42.96Q361.42 36.59 350.47 36.59L350.47 36.59Q339.67 36.59 333.53 42.96Q327.38 49.32 327.38 59.98L327.38 59.98L327.38 86.02Q327.38 96.68 333.53 103.04Q339.67 109.41 350.47 109.41Z"/><path class="l2" d="M433.65 125.98L433.65 125.98Q425.06 125.98 418.63 122.06Q412.19 118.14 408.64 111.18Q405.08 104.23 405.08 95.20L405.08 95.20L405.08 51.39L423.73 51.39L423.73 93.72Q423.73 102.01 427.80 106.15Q431.87 110.30 439.42 110.30L439.42 110.30Q448.00 110.30 452.74 104.60Q457.48 98.90 457.48 88.69L457.48 88.69L457.48 51.39L476.12 51.39L476.12 124.80L457.77 124.80L457.77 115.18L455.11 115.18Q453.33 118.88 448.45 122.43Q443.56 125.98 433.65 125.98Z"/><path class="l3" d="M514.46 126.87L514.46 126.87Q506.61 126.87 500.40 124.13Q494.18 121.40 490.55 116.14Q486.93 110.89 486.93 103.34L486.93 103.34Q486.93 91.94 494.92 86.17Q502.91 80.40 515.34 80.40L515.34 80.40L535.47 80.40L535.47 76.26Q535.47 71.08 532.22 67.75Q528.96 64.42 521.86 64.42L521.86 64.42Q514.90 64.42 511.50 67.60Q508.09 70.78 507.06 75.81L507.06 75.81L489.89 70.04Q491.66 64.42 495.59 59.75Q499.51 55.09 506.09 52.21Q512.68 49.32 522.15 49.32L522.15 49.32Q536.66 49.32 545.09 56.57Q553.53 63.82 553.53 77.59L553.53 77.59L553.53 104.97Q553.53 109.41 557.67 109.41L557.67 109.41L563.59 109.41L563.59 124.80L551.16 124.80Q545.68 124.80 542.13 122.14Q538.58 119.47 538.58 115.03L538.58 115.03L538.58 114.88L535.77 114.88Q535.18 116.66 533.10 119.55Q531.03 122.43 526.59 124.65Q522.15 126.87 514.46 126.87ZM517.71 111.78L517.71 111.78Q525.56 111.78 530.51 107.41Q535.47 103.04 535.47 95.79L535.47 95.79L535.47 94.31L516.68 94.31Q511.50 94.31 508.54 96.53Q505.58 98.75 505.58 102.75L505.58 102.75Q505.58 106.74 508.68 109.26Q511.79 111.78 517.71 111.78Z"/><path class="l4" d="M590.68 124.80L572.03 124.80L572.03 51.39L590.38 51.39L590.38 61.01L593.04 61.01Q594.82 57.16 599.70 53.69Q604.59 50.21 614.50 50.21L614.50 50.21Q623.09 50.21 629.53 54.13Q635.96 58.05 639.52 64.93Q643.07 71.82 643.07 80.99L643.07 80.99L643.07 124.80L624.42 124.80L624.42 82.47Q624.42 74.18 620.35 70.04Q616.28 65.90 608.73 65.90L608.73 65.90Q600.15 65.90 595.41 71.59Q590.68 77.29 590.68 87.50L590.68 87.50L590.68 124.80Z"/><path class="l5" d="M704.78 124.80L684.06 124.80Q676.81 124.80 672.30 120.29Q667.78 115.77 667.78 108.22L667.78 108.22L667.78 66.78L649.43 66.78L649.43 51.39L667.78 51.39L667.78 28.60L686.43 28.60L686.43 51.39L706.56 51.39L706.56 66.78L686.43 66.78L686.43 104.97Q686.43 109.41 690.58 109.41L690.58 109.41L704.78 109.41L704.78 124.80Z"/><path class="l6" d="M746.22 125.98L746.22 125.98Q737.64 125.98 731.20 122.06Q724.76 118.14 721.21 111.18Q717.66 104.23 717.66 95.20L717.66 95.20L717.66 51.39L736.31 51.39L736.31 93.72Q736.31 102.01 740.38 106.15Q744.45 110.30 752.00 110.30L752.00 110.30Q760.58 110.30 765.32 104.60Q770.05 98.90 770.05 88.69L770.05 88.69L770.05 51.39L788.70 51.39L788.70 124.80L770.35 124.80L770.35 115.18L767.68 115.18Q765.91 118.88 761.02 122.43Q756.14 125.98 746.22 125.98Z"/><path class="l7" d="M822.89 124.80L804.24 124.80L804.24 51.39L822.59 51.39L822.59 59.38L825.26 59.38Q827.18 55.68 831.62 52.95Q836.06 50.21 843.31 50.21L843.31 50.21Q851.16 50.21 855.89 53.24Q860.63 56.28 863.14 61.16L863.14 61.16L865.81 61.16Q868.32 56.42 872.91 53.32Q877.50 50.21 885.94 50.21L885.94 50.21Q892.74 50.21 898.29 53.09Q903.84 55.98 907.17 61.83Q910.50 67.67 910.50 76.55L910.50 76.55L910.50 124.80L891.86 124.80L891.86 77.88Q891.86 71.82 888.75 68.78Q885.64 65.75 880.02 65.75L880.02 65.75Q873.65 65.75 870.17 69.82Q866.70 73.89 866.70 81.44L866.70 81.44L866.70 124.80L848.05 124.80L848.05 77.88Q848.05 71.82 844.94 68.78Q841.83 65.75 836.21 65.75L836.21 65.75Q829.84 65.75 826.37 69.82Q822.89 73.89 822.89 81.44L822.89 81.44L822.89 124.80Z"/></g></g>
+</svg>
+      <a class="scrollhint" href="#hero" aria-label="Scroll down"><span>Scroll</span><i></i></a>
+    </section>
+
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="map reveal" style="--d:.2s" aria-hidden="true"><canvas data-map="hero"></canvas></div>
       <div class="wrap">
         <div class="copy">
@@ -115,7 +162,7 @@
     <!-- Statement -->
     <section class="statement" id="statement">
       <div class="wrap">
-        <img src="assets/logo.png" alt="4Quantum">
+        <img src="assets/brand/lockup-inverse.svg" alt="4Quantum" width="923" height="167.5">
         <p id="stmt">We are building single-photon sources and memories, all on one <span class="hl">fiber-integrated patented platform</span>.</p>
       </div>
     </section>
@@ -127,67 +174,74 @@
           <p class="label">Technology</p>
           <h2>Source + Memory</h2>
         </div>
-        <div class="diagram reveal" style="--d:.1s">
-          <svg viewBox="0 0 1000 430" role="img" aria-label="Pump laser drives a light cage four-wave-mixing photon source; a detector click triggers the memory control of a second light cage memory that releases photons on demand.">
-            <defs>
-              <pattern id="rings" width="11" height="40" patternUnits="userSpaceOnUse"><line x1="5.5" y1="2" x2="5.5" y2="38" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/></pattern>
-              <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ff4a22"/><stop offset="1" stop-color="#ff8a66"/></linearGradient>
-              <radialGradient id="pg"><stop offset="0" stop-color="#ffd2c4"/><stop offset=".35" stop-color="#ff5a36"/><stop offset="1" stop-color="#ff5a36" stop-opacity="0"/></radialGradient>
-              <filter id="blur"><feGaussianBlur stdDeviation="5"/></filter>
-            </defs>
+                <div class="diagram reveal" style="--d:.1s" id="diagram">
+          <div class="scroller">
+            <svg viewBox="0 0 1000 430" role="img" aria-label="Animated diagram: a pump beam enters the light-cage photon source, a photon pair is generated, one photon triggers a detector click, the other passes the delay fiber and is stored in the memory under control of the memory control, then read out on demand.">
+              <defs>
+                <pattern id="rings" width="11" height="40" patternUnits="userSpaceOnUse"><line x1="5.5" y1="2" x2="5.5" y2="38" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/></pattern>
+                <linearGradient id="cage1g" x1="0" x2="1"><stop offset="0" stop-color="#e8421a"/><stop offset="1" stop-color="#ff7b5a"/></linearGradient>
+                <radialGradient id="pg"><stop offset="0" stop-color="#ffd2c4"/><stop offset=".35" stop-color="#ff5533"/><stop offset="1" stop-color="#ff5533" stop-opacity="0"/></radialGradient>
+                <filter id="blur"><feGaussianBlur stdDeviation="5"/></filter>
+              </defs>
 
-            <rect x="300" y="36" width="370" height="362" rx="26" fill="#1c2842" stroke="#2c3b5c" stroke-width="1.5"/>
-            <text x="330" y="372" fill="#8fa0c0" font-size="14" letter-spacing="3">3D-PRINTED CHIP</text>
+              <rect x="300" y="36" width="370" height="362" rx="26" fill="#1c2842" stroke="#2c3b5c" stroke-width="1.5"/>
+              <text x="330" y="372" fill="#8fa0c0" font-size="14" letter-spacing="3">3D-PRINTED CHIP</text>
 
-            <text x="330" y="86" fill="#fff" font-size="18" font-weight="600">Light cage + FWM (source)</text>
-            <rect x="330" y="104" width="310" height="40" rx="20" fill="#ff4a22" opacity=".35" filter="url(#blur)"/>
-            <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#beam)" opacity=".9"/>
-            <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#rings)"/>
+              <text x="330" y="86" fill="#fff" font-size="18" font-weight="600">Light cage + FWM (source)</text>
+              <rect x="330" y="104" width="310" height="40" rx="20" fill="#ff4a22" opacity=".28" filter="url(#blur)"/>
+              <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#cage1g)" opacity=".62"/>
+              <rect id="c1glow" x="330" y="104" width="310" height="40" rx="20" fill="#ffc2ad" opacity="0"/>
+              <rect x="330" y="104" width="310" height="40" rx="20" fill="url(#rings)"/>
 
-            <text x="330" y="256" fill="#fff" font-size="18" font-weight="600">Light cage + EIT (memory)</text>
-            <rect x="330" y="268" width="310" height="40" rx="20" fill="#9fb4d6" opacity=".25" filter="url(#blur)"/>
-            <rect x="330" y="268" width="310" height="40" rx="20" fill="#7d93bb" opacity=".55"/>
-            <rect x="330" y="268" width="310" height="40" rx="20" fill="url(#rings)"/>
+              <text x="330" y="256" fill="#fff" font-size="18" font-weight="600">Light cage + EIT (memory)</text>
+              <rect x="330" y="268" width="310" height="40" rx="20" fill="#9fb4d6" opacity=".22" filter="url(#blur)"/>
+              <rect x="330" y="268" width="310" height="40" rx="20" fill="#7d93bb" opacity=".55"/>
+              <rect id="c2glow" x="330" y="268" width="310" height="40" rx="20" fill="#bcd4ff" opacity="0"/>
+              <rect x="330" y="268" width="310" height="40" rx="20" fill="url(#rings)"/>
 
-            <rect x="70" y="102" width="140" height="44" rx="9" fill="#2a3040" stroke="#3a4156"/>
-            <text x="140" y="130" fill="#fff" font-size="18" font-weight="600" text-anchor="middle">Pump laser</text>
-            <line x1="210" y1="124" x2="330" y2="124" stroke="#ff4a22" stroke-width="7"/>
-            <line x1="210" y1="124" x2="330" y2="124" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-dasharray="6 18"><animate attributeName="stroke-dashoffset" from="48" to="0" dur="1s" repeatCount="indefinite"/></line>
-            <line x1="330" y1="124" x2="640" y2="124" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 18"><animate attributeName="stroke-dashoffset" from="48" to="0" dur="1.4s" repeatCount="indefinite"/></line>
+              <rect x="70" y="102" width="140" height="44" rx="9" fill="#2a3040" stroke="#3a4156"/>
+              <text x="140" y="130" fill="#fff" font-size="18" font-weight="600" text-anchor="middle">Pump laser</text>
+              <line x1="210" y1="124" x2="330" y2="124" stroke="#ff4a22" stroke-opacity=".5" stroke-width="7"/>
 
-            <path d="M640,124 L770,124" stroke="#8fa0c0" stroke-width="2" fill="none"/>
-            <path d="M770,98 h18 a26,26 0 0 1 0,52 h-18 z" fill="#e0451f"/>
-            <text x="796" y="180" fill="#c9d2e6" font-size="18" text-anchor="middle">Detector</text>
-            <line x1="826" y1="124" x2="850" y2="124" stroke="#8fa0c0" stroke-width="2" stroke-dasharray="5 5"/>
-            <rect x="855" y="100" width="100" height="46" rx="9" fill="#e8421a"/>
-            <text x="905" y="130" fill="#fff" font-size="19" font-weight="700" text-anchor="middle">Click</text>
-            <line x1="905" y1="146" x2="905" y2="248" stroke="#ff4a22" stroke-width="3"/>
-            <rect x="823" y="250" width="164" height="46" rx="9" fill="#232a38" stroke="#3a4156"/>
-            <text x="905" y="279" fill="#fff" font-size="17" font-weight="600" text-anchor="middle">Memory control</text>
+              <path d="M640,124 L770,124" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+              <path d="M770,98 h18 a26,26 0 0 1 0,52 h-18 z" fill="#e0451f"/>
+              <path id="detFlash" d="M770,98 h18 a26,26 0 0 1 0,52 h-18 z" fill="#ffd9cc" opacity="0"/>
+              <text x="796" y="180" fill="#c9d2e6" font-size="18" text-anchor="middle">Detector</text>
+              <line x1="826" y1="124" x2="850" y2="124" stroke="#8fa0c0" stroke-width="2" stroke-dasharray="5 5"/>
+              <rect x="855" y="100" width="100" height="46" rx="9" fill="#e8421a"/>
+              <rect id="clickFlash" x="855" y="100" width="100" height="46" rx="9" fill="#ffd9cc" opacity="0"/>
+              <text x="905" y="130" fill="#fff" font-size="19" font-weight="700" text-anchor="middle">Click</text>
+              <line x1="905" y1="146" x2="905" y2="248" stroke="#ff5533" stroke-opacity=".55" stroke-width="3"/>
+              <rect x="823" y="250" width="164" height="46" rx="9" fill="#232a38" stroke="#3a4156"/>
+              <rect id="mcFlash" x="823" y="250" width="164" height="46" rx="9" fill="#ff5533" opacity="0"/>
+              <text x="905" y="279" fill="#fff" font-size="17" font-weight="600" text-anchor="middle">Memory control</text>
 
-            <circle cx="706" cy="202" r="26" fill="none" stroke="#c9d2e6" stroke-width="2.5"/>
-            <circle cx="706" cy="202" r="19" fill="none" stroke="#c9d2e6" stroke-width="2"/>
-            <text x="746" y="208" fill="#c9d2e6" font-size="18">Delay fiber</text>
-            <path d="M690,124 L706,176" stroke="#8fa0c0" stroke-width="2" fill="none"/>
-            <path d="M640,284 L690,222" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+              <circle cx="706" cy="202" r="26" fill="none" stroke="#c9d2e6" stroke-width="2.5"/>
+              <circle cx="706" cy="202" r="19" fill="none" stroke="#c9d2e6" stroke-width="2"/>
+              <text x="746" y="208" fill="#c9d2e6" font-size="18">Delay fiber</text>
+              <path d="M660,124 L706,176" stroke="#8fa0c0" stroke-width="2" fill="none"/>
+              <path d="M640,288 L690,222" stroke="#8fa0c0" stroke-width="2" fill="none"/>
 
-            <path d="M905,296 V392 H480 V308" stroke="#ff4a22" stroke-width="3" fill="none"/>
-            <path d="M330,288 H90" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
-            <path d="M104,280 L90,288 L104,296" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
-            <text x="70" y="330" fill="#ff7b5a" font-size="19" font-weight="600">Quasi On-demand photons</text>
+              <path d="M905,296 V392 H480 V308" stroke="#ff5533" stroke-opacity=".55" stroke-width="3" fill="none"/>
+              <path d="M330,288 H90" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
+              <path d="M104,280 L90,288 L104,296" stroke="#8fa0c0" stroke-width="2.5" fill="none"/>
+              <text id="outLbl" x="70" y="330" fill="#ff7b5a" font-size="19" font-weight="600" opacity=".6">Quasi On-demand photons</text>
 
-            <g>
-              <circle r="14" fill="url(#pg)"><animateMotion dur="3.6s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
-              <circle r="5" fill="#fff"><animateMotion dur="3.6s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
-            </g>
-            <g>
-              <circle r="14" fill="url(#pg)"><animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
-              <circle r="5" fill="#fff"><animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite" path="M330,124 L640,124 L690,124 L706,176 A26,26 0 1 0 706,228 L640,284"/></circle>
-            </g>
-            <circle r="9" fill="url(#pg)"><animateMotion dur="3.6s" begin=".8s" repeatCount="indefinite" path="M905,146 V248"/></circle>
-            <circle r="9" fill="url(#pg)"><animateMotion dur="3.6s" begin="2.4s" repeatCount="indefinite" path="M905,296 V392 H480 V308"/></circle>
-            <circle r="12" fill="url(#pg)"><animateMotion dur="3.6s" begin="2.9s" repeatCount="indefinite" path="M480,288 H90"/></circle>
-          </svg>
+              <g id="dyn">
+                <g id="beam" fill="none" stroke-linecap="round">
+                  <line x1="210" y1="124" x2="640" y2="124" pathLength="1" stroke="#ff7b5a" stroke-opacity=".4" stroke-width="18" stroke-dasharray=".2 3"/>
+                  <line x1="210" y1="124" x2="640" y2="124" pathLength="1" stroke="#fff1ec" stroke-width="6" stroke-dasharray=".2 3"/>
+                </g>
+                <circle id="burst" cx="640" cy="124" r="6" fill="none" stroke="#ffb199" stroke-width="3" opacity="0"/>
+                <path id="clickGlow" d="M905,146 V250" pathLength="1" fill="none" stroke="#ffb199" stroke-width="7" stroke-linecap="round" stroke-dasharray=".25 3"/>
+                <path id="ctrlGlow" d="M905,296 V392 H480 V308" pathLength="1" fill="none" stroke="#ffb199" stroke-width="7" stroke-linecap="round" stroke-dasharray=".12 3"/>
+                <circle id="ring" cx="485" cy="288" r="8" fill="none" stroke="#bcd4ff" stroke-width="3" opacity="0"/>
+                <g id="phA" opacity="0"><circle r="14" fill="url(#pg)"/><circle r="5" fill="#fff"/></g>
+                <g id="phB" opacity="0"><circle r="16" fill="url(#pg)"/><circle r="5.5" fill="#fff"/></g>
+              </g>
+            </svg>
+          </div>
+          <p class="phase" id="phase"><span class="step">1</span><span class="txt">The pump beam enters the light cage</span></p>
         </div>
         <div class="points3">
           <div class="point reveal" style="--d:.05s"><span class="arrow">→</span><strong>Up to 5x less power</strong><span class="desc">Stronger atom-photon interaction</span></div>
