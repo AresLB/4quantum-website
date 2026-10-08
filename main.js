@@ -91,8 +91,8 @@
       var rad = Math.max(1.1, w * 0.0027);
       for (var i = 0; i < dots.length; i++) {
         var d = dots[i];
-        var a = reduce ? .38 : .2 + .22 * (0.5 + 0.5 * Math.sin(t * .9 + d[2]));
-        ctx.fillStyle = 'rgba(190,205,230,' + a.toFixed(3) + ')';
+        var a = reduce ? .34 : .16 + .2 * (0.5 + 0.5 * Math.sin(t * .9 + d[2]));
+        ctx.fillStyle = 'rgba(70,82,104,' + a.toFixed(3) + ')';
         ctx.beginPath(); ctx.arc(d[0] * w, d[1] * h, rad, 0, 6.2832); ctx.fill();
       }
 
@@ -113,10 +113,10 @@
         var pulse = reduce ? .5 : 0.5 + 0.5 * Math.sin(t * 1.6 + n * 1.7);
         var gr = (w * .028 + pulse * w * .014) * np;
         var g = ctx.createRadialGradient(x, y, 0, x, y, gr);
-        g.addColorStop(0, 'rgba(255,90,54,.55)'); g.addColorStop(1, 'rgba(255,90,54,0)');
+        g.addColorStop(0, 'rgba(255,90,54,.42)'); g.addColorStop(1, 'rgba(255,90,54,0)');
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, gr, 0, 6.2832); ctx.fill();
         ctx.fillStyle = '#ff6a47'; ctx.beginPath(); ctx.arc(x, y, Math.max(2, w * .0058) * np, 0, 6.2832); ctx.fill();
-        ctx.fillStyle = '#ffe3da'; ctx.beginPath(); ctx.arc(x, y, Math.max(1, w * .0024) * np, 0, 6.2832); ctx.fill();
+        ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, Math.max(1, w * .0024) * np, 0, 6.2832); ctx.fill();
       }
 
       if (!reduce && t > 1.4) {
@@ -132,7 +132,7 @@
           var s = N[E[pk.e][pk.dir]], f = N[E[pk.e][pk.dir === 0 ? 1 : 0]];
           var px = (s[0] + (f[0] - s[0]) * pk.p) * w, py = (s[1] + (f[1] - s[1]) * pk.p) * h;
           var pg = ctx.createRadialGradient(px, py, 0, px, py, w * .018);
-          pg.addColorStop(0, 'rgba(255,230,220,.95)'); pg.addColorStop(.4, 'rgba(255,110,70,.5)'); pg.addColorStop(1, 'rgba(255,90,54,0)');
+          pg.addColorStop(0, 'rgba(255,90,54,.95)'); pg.addColorStop(.35, 'rgba(255,90,54,.4)'); pg.addColorStop(1, 'rgba(255,90,54,0)');
           ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(px, py, w * .018, 0, 6.2832); ctx.fill();
         }
       }
