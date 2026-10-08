@@ -13,7 +13,7 @@
   <script>
     (function () {
       var d = document.documentElement, skip = false;
-      try { skip = sessionStorage.getItem("q4-intro") === "1"; } catch (e) {}
+      try { var n = new Date(); skip = localStorage.getItem("q4-intro") === n.getFullYear() + "-" + (n.getMonth() + 1) + "-" + n.getDate(); } catch (e) {}
       if (skip || location.hash || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { d.className += " skip-intro"; return; }
       d.className += " intro-lock";
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";

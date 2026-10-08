@@ -56,15 +56,26 @@
     window.scrollTo(0, 0);
     root.classList.add('intro-active');
     var done = false;
+    function glideTo(y, ms) {
+      var from = window.scrollY, t0 = null;
+      function step(now) {
+        if (t0 === null) t0 = now;
+        var p = Math.min(1, (now - t0) / ms);
+        var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        window.scrollTo({ top: from + (y - from) * e, behavior: 'instant' });
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
     function finish() {
       if (done) return;
       done = true;
-      try { sessionStorage.setItem('q4-intro', '1'); } catch (e) {}
+      try { var n = new Date(); localStorage.setItem('q4-intro', n.getFullYear() + '-' + (n.getMonth() + 1) + '-' + n.getDate()); } catch (e) {}
       root.classList.remove('intro-lock');
-      hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      glideTo(hero.getBoundingClientRect().top + window.scrollY, 1500);
     }
     var last = intro.querySelector('.l7');
-    if (last) last.addEventListener('animationend', function () { setTimeout(finish, 1100); });
+    if (last) last.addEventListener('animationend', function () { setTimeout(finish, 350); });
     setTimeout(finish, 8000);
     window.addEventListener('wheel', function (e) { if (e.deltaY > 0) finish(); }, { passive: true });
     window.addEventListener('touchmove', finish, { passive: true });
